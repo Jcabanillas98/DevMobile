@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
+    tools:context=".ui.activities.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="@dimen/dimen_80dp"
+            android:layout_height="@dimen/dimen_80dp"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:layout_marginBottom="@dimen/dimen_24dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_photo"
+            android:contentDescription="@string/content_description" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivLogo"
+            android:background="@drawable/background_main_container"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_22dp"
+                android:layout_marginTop="@dimen/dimen_24dp"
+                android:layout_marginEnd="@dimen/dimen_22dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_marginEnd="@dimen/dimen_2dp"
+                    android:text="@string/welcome"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_marginEnd="@dimen/dimen_2dp"
+                    android:layout_marginBottom="@dimen/dimen_12dp"
+                    android:text="@string/welcome_peach"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:layout_marginEnd="@dimen/dimen_2dp"
+                    android:layout_marginBottom="@dimen/dimen_2dp"
+                    android:text="@string/username"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_2dp"
+                    android:layout_marginBottom="@dimen/dimen_12dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/drop_shadow"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:contentDescription="@string/content_description"
+                            android:src="@drawable/ic_user_silhouette" />
+
+                        <EditText
+                            android:id="@+id/etUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_36dp"
+                            android:layout_margin="@dimen/dimen_10dp"
+                            android:autofillHints=""
+                            android:background="@android:color/transparent"
+                            android:hint="@string/insert_name"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grayTransparent"
+                            android:textSize="@dimen/text_size_14sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvErrorUserName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_2dp"
+                        android:text="@string/insert_valid_username"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size_12sp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_2dp"
+                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:layout_marginEnd="@dimen/dimen_2dp"
+                    android:layout_marginBottom="@dimen/dimen_2dp"
+                    android:text="@string/password"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_2dp"
+                    android:layout_marginBottom="@dimen/dimen_12dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/drop_shadow"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dimen_10dp"
+                            android:contentDescription="@string/content_description"
+                            android:src="@drawable/ic_padlock" />
+
+                        <EditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/dimen_36dp"
+                            android:layout_margin="@dimen/dimen_10dp"
+                            android:layout_weight="1"
+                            android:autofillHints=""
+                            android:background="@android:color/transparent"
+                            android:hint="@string/insert_password"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/grayTransparent"
+                            android:textSize="@dimen/text_size_14sp" />
+
+                        <ImageView
+                            android:id="@+id/ivPasswordLocked"
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="@dimen/dimen_10dp"
+                            android:contentDescription="@string/content_description"
+                            android:src="@drawable/ic_locked" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvErrorPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_2dp"
+                        android:text="@string/insert_valid_password"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size_12sp"
+                        android:visibility="invisible" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_56dp"
+                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:layout_marginBottom="@dimen/dimen_6dp"
+                    android:background="@drawable/background_button_rounded_black"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:gravity="center"
+                        android:text="@string/sign_in"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_16sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

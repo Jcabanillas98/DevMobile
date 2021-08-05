@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">DevMobile</string>
+
+
+    <!---->
+    <string name="content_description">resource</string>
+
+    <!--Welcome Activity-->
+    <string name="welcome">¡Bienvenido!</string>
+    <string name="welcome_peach">Nos encanta tenerte aquí, inicia sesión para continuar</string>
+    <string name="username">Nombre de Usuario</string>
+    <string name="password">Contraseña</string>
+
+    <string name="insert_name">Ingresa tu nombre</string>
+    <string name="insert_valid_username">Ingrese nombre de usuario válido</string>
+
+    <string name="insert_password">Ingresa tu contraseña</string>
+    <string name="insert_valid_password">Ingrese contraseña válida</string>
+    <string name="insert_valid_password_lenght">Ingrese contraseña de al menos 8 dígitos</string>
+
+
+    <string name="sign_in">Ingresar</string>
+
 </resources>
