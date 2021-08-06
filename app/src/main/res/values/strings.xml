@@ -21,6 +21,7 @@
     <string name="sign_in">Entrar</string>
 
     <!--Upload Activity-->
+    <string name="upload_title">Previsualizador de carga</string>
     <string name="upload_peach">Pega o escribe la URL de la imagen que deseas cargar</string>
     <string name="url">URL de la imagen</string>
 
@@ -29,5 +30,14 @@
 
     <string name="load_url">Cargar Imagen</string>
 
+    <!--Gallery Activity-->
+    <string name="gallery_title">Galería de Imágenes</string>
+<!--    <string name="upload_peach">Pega o escribe la URL de la imagen que deseas cargar</string>-->
+<!--    <string name="url">URL de la imagen</string>-->
+
+<!--    <string name="insert_url">Inserta o digita la URL</string>-->
+<!--    <string name="insert_valid_url">Ingrese una URL válida</string>-->
+
+<!--    <string name="load_url">Cargar Imagen</string>-->
 
 </resources>

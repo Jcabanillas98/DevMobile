@@ -17,11 +17,11 @@ import java.util.ArrayList;
 public class ThumbnailsHorizontalAdapter extends RecyclerView.Adapter<ThumbnailsHorizontalAdapter.ThumbnailsViewHolder> {
 
     private Context context;
-    private final ArrayList<String> arrMiniatures;
+    private final ArrayList<String> arrThumbnails;
     private final ImageView display;
 
-    public ThumbnailsHorizontalAdapter(ArrayList<String> arrMiniatures, ImageView display) {
-        this.arrMiniatures = arrMiniatures;
+    public ThumbnailsHorizontalAdapter(ArrayList<String> arrThumbnails, ImageView display) {
+        this.arrThumbnails = arrThumbnails;
         this.display = display;
     }
 
@@ -34,12 +34,12 @@ public class ThumbnailsHorizontalAdapter extends RecyclerView.Adapter<Thumbnails
 
     @Override
     public void onBindViewHolder(@NonNull ThumbnailsViewHolder holder, int position) {
-        String uri = arrMiniatures.get(position);
+        String uri = arrThumbnails.get(position);
         Glide.with(context).load(uri).centerCrop().into(holder.ivThumbnails);
         holder.ivThumbnails.setOnClickListener(view -> Glide.with(context).load(uri).into(display));
         holder.ivRemove.setOnClickListener(view -> {
             removePosition(position);
-            if (arrMiniatures.size() == 0)
+            if (arrThumbnails.size() == 0)
                 Glide.with(context).clear(display);
         });
     }
@@ -56,12 +56,12 @@ public class ThumbnailsHorizontalAdapter extends RecyclerView.Adapter<Thumbnails
 
     @Override
     public int getItemCount() {
-        return (null != arrMiniatures ? arrMiniatures.size() : 0);
+        return (null != arrThumbnails ? arrThumbnails.size() : 0);
     }
 
     public void removePosition(int position) {
-        arrMiniatures.remove(position);
+        arrThumbnails.remove(position);
         notifyItemRemoved(position);
-        notifyItemRangeChanged(position, arrMiniatures.size());
+        notifyItemRangeChanged(position, arrThumbnails.size());
     }
 }

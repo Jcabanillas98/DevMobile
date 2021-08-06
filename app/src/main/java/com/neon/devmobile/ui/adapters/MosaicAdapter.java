@@ -4,51 +4,50 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.neon.devmobile.R;
 
 import java.util.ArrayList;
 
-public class MosaicAdapter extends ArrayAdapter<String> {
+public class MosaicAdapter extends RecyclerView.Adapter<MosaicAdapter.MosaicViewHolder> {
 
-    private final Context context;
-    private final ArrayList<String> arrURLs;
+    private Context context;
+    private final ArrayList<String> arrImages;
 
-    public MosaicAdapter(Context context, ArrayList<String> arrURLs) {
-        super(context, 0, arrURLs);
-        this.context = context;
-        this.arrURLs = arrURLs;
+    public MosaicAdapter(ArrayList<String> arrImages) {
+        this.arrImages = arrImages;
+    }
+
+    @NonNull
+    @Override
+    public MosaicViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        context = parent.getContext();
+        return new MosaicViewHolder(LayoutInflater.from(context).inflate(R.layout.item_image, parent, false));
     }
 
     @Override
-    public int getCount() {
-        return super.getCount();
+    public void onBindViewHolder(@NonNull MosaicViewHolder holder, int position) {
+        String uri = arrImages.get(position);
+        Glide.with(context).load(uri).centerCrop().into(holder.ivImage);
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        MosaicAdapter.ViewHolder holder;
-        String category = arrURLs.get(position);
-        if (convertView == null) {
-            holder = new MosaicAdapter.ViewHolder();
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.item_thumbnail, parent, false);
+    static class MosaicViewHolder extends RecyclerView.ViewHolder {
+        ImageView ivImage;
 
-//            holder.ivMosaic = convertView.findViewById(R.id.ivMosaic);
-            convertView.setTag(holder);
-        } else {
-            holder = (MosaicAdapter.ViewHolder) convertView.getTag();
+        MosaicViewHolder(View view) {
+            super(view);
+            ivImage = view.findViewById(R.id.ivImage);
         }
-
-        Glide.with(context).load(category).into(holder.ivMosaic);
-        return convertView;
     }
 
-    static class ViewHolder {
-        ImageView ivMosaic;
+    @Override
+    public int getItemCount() {
+        return (null != arrImages ? arrImages.size() : 0);
     }
+
 }
-

@@ -1,5 +1,6 @@
 package com.neon.devmobile.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.neon.devmobile.databinding.ActivityUploadBinding;
 import com.neon.devmobile.ui.adapters.ThumbnailsHorizontalAdapter;
 import com.neon.devmobile.utils.ErrorUtils;
@@ -39,6 +41,16 @@ public class UploadActivity extends AppCompatActivity {
     public void loadActions() {
         ErrorUtils.addErrorListener(binding.etURL, binding.llURL, binding.tvErrorURL);
         KeyboardUtils.clearFocusImeDone(binding.etURL);
+        initMosaicsGallery();
+        returnUpload();
+    }
+
+    public void initMosaicsGallery(){
+        binding.clGallery.setOnClickListener(view -> startActivity(new Intent(UploadActivity.this, MosaicGalleryActivity.class).putExtra("mosaics", new Gson().toJson(arrThumbnails))));
+    }
+
+    public void returnUpload() {
+        binding.clBack.setOnClickListener(view -> onBackPressed());
     }
 
     public void validateLoad() {
