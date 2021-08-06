@@ -5,7 +5,7 @@
     <!---->
     <string name="content_description">resource</string>
 
-    <!--Welcome Activity-->
+    <!--Login Activity-->
     <string name="welcome">¡Bienvenido!</string>
     <string name="welcome_peach">Nos encanta tenerte aquí, inicia sesión para continuar</string>
     <string name="username">Nombre de Usuario</string>
@@ -18,7 +18,16 @@
     <string name="insert_valid_password">Ingrese contraseña válida</string>
     <string name="insert_valid_password_lenght">Ingrese contraseña de al menos 8 dígitos</string>
 
+    <string name="sign_in">Entrar</string>
 
-    <string name="sign_in">Ingresar</string>
+    <!--Upload Activity-->
+    <string name="upload_peach">Pega o escribe la URL de la imagen que deseas cargar</string>
+    <string name="url">URL de la imagen</string>
+
+    <string name="insert_url">Inserta o digita la URL</string>
+    <string name="insert_valid_url">Ingrese una URL válida</string>
+
+    <string name="load_url">Cargar Imagen</string>
+
 
 </resources>

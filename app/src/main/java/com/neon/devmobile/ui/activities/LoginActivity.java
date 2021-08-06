@@ -1,8 +1,8 @@
 package com.neon.devmobile.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,8 +44,11 @@ public class LoginActivity extends AppCompatActivity {
 
     public void validateLogin() {
         binding.llSignIn.setOnClickListener(view -> {
-            if (validFields())
-                Toast.makeText(LoginActivity.this, "Iniciando sesión", Toast.LENGTH_SHORT).show();
+            if (validFields()) {
+                KeyboardUtils.hideKeyboard();
+                binding.etPassword.clearFocus();
+                startActivity(new Intent(LoginActivity.this, UploadActivity.class));
+            }
         });
     }
 
